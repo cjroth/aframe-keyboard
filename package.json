@@ -1,28 +1,33 @@
 {
-  "name": "aframe-d3-3d-bars-example",
+  "name": "aframe-keyboard",
   "version": "1.0.0",
-  "description": "An example of a 3D bar chart using D3 and Aframe.",
+  "description": "A keyboard for Aframe to give the user visual feedback while they are typing.",
   "main": "main.js",
   "dependencies": {
     "aframe": "^0.3.2",
-    "aframe-meshline-component": "^0.2.0",
-    "browserify": "^13.1.1",
-    "d3": "^4.3.0",
-    "lodash": "^4.17.2"
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.8",
+    "babel-preset-es2015": "^6.18.0",
+    "css-loader": "^0.26.0",
+    "d3": "^4.4.0",
+    "json-loader": "^0.5.4",
+    "kframe": "^0.3.0",
+    "webpack": "^1.13.3"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "install": "browserify main.js > main.combined.js"
+    "install": "webpack",
+    "start": "webpack-dev-server"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cjroth/aframe-d3-3d-bars-example.git"
+    "url": "git+https://github.com/cjroth/aframe-keyboard.git"
   },
   "author": "Chris Roth <chris@cjroth.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/cjroth/aframe-d3-3d-bars-example/issues"
+    "url": "https://github.com/cjroth/aframe-keyboard/issues"
   },
-  "homepage": "https://cjroth.com/aframe-d3-3d-bars-example"
+  "homepage": "https://cjroth.com/aframe-keyboard"
 }

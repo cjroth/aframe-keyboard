@@ -1,1 +1,1 @@
-exclude: ['node_modules', .git]
+exclude: ['node_modules', .git, kframe, canvas-text-editor]

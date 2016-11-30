@@ -89,7 +89,10 @@
 	        textColor: '#000',
 	        selectionColor: 'yellow',
 	        focusColor: 'green',
-	        fontFamily: 'Verdana'
+	        fontFamily: 'Verdana',
+	        fontSize: 18,
+	        width: 1024,
+	        height: 512
 	    });
 
 	    window.editor = editor;
@@ -84667,11 +84670,11 @@
 	    backgroundColor: 'Window',
 	    selectionColor: 'Highlight',
 	    focusColor: '#09f',
-	    fontFamily: 'sans-serif',
-	    fontSize: 18,
-	    padding: 50,
-	    width: 1024,
-	    height: 512,
+	    fontFamily: '"Courier New", Courier, monospace',
+	    fontSize: 14,
+	    padding: 5,
+	    width: 640,
+	    height: 480,
 	    canvas: null
 	  };
 

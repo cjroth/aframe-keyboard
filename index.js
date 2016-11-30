@@ -25,7 +25,10 @@ function main() {
         textColor: '#000',
         selectionColor: 'yellow',
         focusColor: 'green',
-        fontFamily: 'Verdana'
+        fontFamily: 'Verdana',
+        fontSize: 18,
+        width: 1024,
+        height: 512
     })
 
     window.editor = editor

@@ -1,7 +1,7 @@
 [submodule "canvas-text-editor"]
 	path = canvas-text-editor
-	url = git://github.com/cjroth/canvas-text-editor.git
+	url = https://github.com/cjroth/canvas-text-editor.git
 
 [submodule "kframe"]
 	path = kframe
-	url = git://github.com/ngokevin/kframe.git
+	url = https://github.com/ngokevin/kframe.git

@@ -6,23 +6,10 @@
         <script src="combined.js"></script>
     </head>
     <body>
-        <a-scene debug stats>
-            <!-- <a-box position="0 1 0" width="2" height="0.3" depth="2" color="#4CC3D9"></a-box> -->
-            <!-- <a-plane rotation="-90 0 0" position="0 1 -1" color="#4CC3D9" width="2" height="2" text="text: test; height: 0"></a-plane> -->
-
-            <a-entity id="keyboard" scale="0.01 0.01 0.01" position="0 1.4 -0.3">
-
-                <!-- <a-box position="0 0 0" width="2" height="0.3" depth="2" color="#4CC3D9"></a-box>
-                <a-box position="2.5 0 0" width="2" height="0.3" depth="2" color="#4CC3D9"></a-box>
-                <a-box position="5 0 0" width="2" height="0.3" depth="2" color="#4CC3D9"></a-box> -->
-            </a-entity>
-
-            <!-- <a-sphere position="0 1.25 -1" radius="1.25" color="#EF2D5E"></a-sphere>
-            <a-box position="-1 0.5 1" rotation="0 45 0" width="1" height="1" depth="1"  color="#4CC3D9"></a-box>
-            <a-cylinder position="1 0.75 1" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder> -->
+        <a-scene debug stats keyboard-shortcuts="enterVR: false; resetSensor: false">
+            <a-entity id="keyboard" scale="0.01 0.01 0.01" position="0 1.4 -0.3"></a-entity>
             <a-plane rotation="270 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
-
-            <!-- <a-sky color="#ECECEC"></a-sky> -->
+            <a-sky color="#ececec"></a-sky>
             <a-entity position="0.15 1.6 -0.2" rotation="-45 0 0">
                 <a-camera position="0 0 0" user-height="0" wasd-controls="enabled: false"></a-camera>
             </a-entity>

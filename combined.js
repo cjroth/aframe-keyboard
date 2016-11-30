@@ -67,9 +67,7 @@
 	    window.addEventListener('keyup', handleKeyUp);
 	    window.addEventListener('keydown', handleKeyDown);
 
-	    var data = [['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', '[', ']', '\\'], ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', ';', '\''], ['Z', 'X', 'C', 'V', 'B', 'N', 'M', '<', '>', '?']];
-
-	    // data = []
+	    var data = [['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', '[', ']'], ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', ';', '\''], ['Z', 'X', 'C', 'V', 'B', 'N', 'M', ',', '.', '/']];
 
 	    var scene = d3.select('a-scene');
 
@@ -86,7 +84,6 @@
 	        var row = data.indexOf(d3.select(this.parentNode).datum());
 	        return 2.5 * i + ' ' + -1 * row + ' ' + 2.5 * row;
 	    }).each(function () {
-	        window.w = this;
 	        this.baseYPosition = this.getAttribute('position').y;
 	    });
 
@@ -96,9 +93,6 @@
 	        return 'text: ' + d;
 	    }).attr('position', '0 0.2 0').attr('curveSegments', 1);
 	}
-
-	window.d3 = d3;
-	window.aframe = aframe;
 
 	function handleKeyUp(event) {
 	    var key = document.querySelector('[data-key="' + event.key.toUpperCase() + '"]');

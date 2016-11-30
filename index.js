@@ -12,12 +12,10 @@ function main() {
     window.addEventListener('keydown', handleKeyDown)
 
     let data = [
-        ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', '[', ']', '\\'],
+        ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', '[', ']'],
         ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', ';', '\''],
-        ['Z', 'X', 'C', 'V', 'B', 'N', 'M', '<', '>', '?']
+        ['Z', 'X', 'C', 'V', 'B', 'N', 'M', ',', '.', '/']
     ]
-
-    // data = []
 
     let scene = d3.select('a-scene')
 
@@ -41,7 +39,6 @@ function main() {
             return `${2.5 * i} ${-1 * row} ${2.5 * row}`
         })
         .each(function() {
-            window.w = this
             this.baseYPosition = this.getAttribute('position').y
         })
 
@@ -58,12 +55,7 @@ function main() {
         .attr('position', '0 0.2 0')
         .attr('curveSegments', 1)
 
-
-
 }
-
-window.d3 = d3
-window.aframe = aframe
 
 function handleKeyUp(event) {
     let key = document.querySelector(`[data-key="${event.key.toUpperCase()}"]`)

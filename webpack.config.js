@@ -18,6 +18,10 @@ module.exports = {
         }, {
             test: /\.json$/,
             loader: 'json-loader'
+        },
+        {
+            test: /\.glsl$/,
+            loader: 'glsl-loader'
         }],
         noParse: [
             /node_modules\/webvr-polyfill/,

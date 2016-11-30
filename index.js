@@ -1,5 +1,6 @@
-import * as aframe from 'aframe'
-import 'kframe/dist/k-frame'
+import * as AFRAME from 'aframe'
+import './kframe/components/text'
+import './kframe/components/sun-sky/dist/aframe-sun-sky.min.js'
 import * as d3 from 'd3'
 
 import { default as CanvasTextEditor } from './canvas-text-editor/lib/CanvasTextEditor'
@@ -17,8 +18,15 @@ function main() {
     window.addEventListener('keypress', handleKeyPress)
 
     let canvas = document.querySelector('#app')
-    let doc = new Document('test')
-    let editor = new CanvasTextEditor(doc, { canvas, backgroundColor: '#000', textColor: '#fff' })
+    let doc = new Document('What\'s on your mind?')
+    let editor = new CanvasTextEditor(doc, {
+        canvas,
+        backgroundColor: '#fff',
+        textColor: '#000',
+        selectionColor: 'yellow',
+        focusColor: 'green',
+        fontFamily: 'Verdana'
+    })
 
     window.editor = editor
 
@@ -54,7 +62,8 @@ function main() {
         })
 
     let buttons = keys.append('a-box')
-        .attr('color', '#4CC3D9')
+        .attr('color', '#ffffff')
+        .attr('opacity', 0.5)
         .attr('depth', 2)
         .attr('width', 2)
         .attr('height', 0.3)
@@ -87,3 +96,25 @@ function handleKeyDown(event) {
 function handleKeyPress(event) {
     window.editor.dispatchEvent('keypress', event)
 }
+
+AFRAME.registerComponent('sun-position-setter', {
+  init: function () {
+    var skyEl = this.el;
+    var orbitEl = this.el.sceneEl.querySelector('#orbit');
+    orbitEl.addEventListener('componentchanged', function changeSun (evt) {
+      var sunPosition;
+      var phi;
+      var theta;
+      if (evt.detail.name !== 'rotation') { return; }
+      sunPosition = orbitEl.getComputedAttribute('rotation');
+      if(sunPosition === null) { return; }
+      theta = Math.PI * (- 0.5);
+      phi = 2 * Math.PI * (sunPosition.y / 360 - 0.5);
+      skyEl.setAttribute('material', 'sunPosition', {
+        x: Math.cos(phi),
+        y: Math.sin(phi) * Math.sin(theta),
+        z: -1
+      });
+    });
+  }
+});

@@ -6,14 +6,19 @@
         <script src="combined.js"></script>
     </head>
     <body>
-        <a-scene debug stats keyboard-shortcuts="enterVR: false; resetSensor: false">
+        <a-scene debug keyboard-shortcuts="enterVR: false; resetSensor: false">
             <a-assets>
                 <canvas id="app" width="1024" height="512"></canvas>
             </a-assets>
-            <a-video src="#app" width="1" height="0.5" position="0 1.5 -0.75" transparent="false"></a-video>
+            <a-sun-sky sun-position-setter>
+                <a-entity id="orbit">
+                  <a-animation attribute="rotation" from="0 0 0" to="0 360 0" dur="3600000" repeat="indefinite" easing="linear"></a-animation>
+                </a-entity>
+            </a-sun-sky>
+            <a-video src="#app" width="1" height="0.5" position="0 1.5 -0.75" transparent="false" opacity="0.5"></a-video>
             <a-entity id="keyboard" scale="0.01 0.01 0.01" position="-0.15 1.4 -0.44"></a-entity>
-            <a-plane rotation="270 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
-            <a-sky color="#ececec"></a-sky>
+            <!-- <a-plane rotation="270 0 0" width="100" height="100" color="#7BC8A4"></a-plane> -->
+            <!-- <a-sky color="#ececec"></a-sky> -->
             <a-entity position="0 1.6 -0.2" rotation="-15 0 0">
                 <a-camera position="0 0 0" user-height="0" wasd-controls="enabled: false"></a-camera>
             </a-entity>

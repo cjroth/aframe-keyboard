@@ -2,14 +2,25 @@ import * as aframe from 'aframe'
 import 'kframe/dist/k-frame'
 import * as d3 from 'd3'
 
+import { default as CanvasTextEditor } from './canvas-text-editor/lib/CanvasTextEditor'
+import { default as Document } from './canvas-text-editor/lib/Document'
+
 window.addEventListener('load', function() {
-    document.querySelector('a-scene').addEventListener('loaded', main)
+    // document.querySelector('a-scene').addEventListener('loaded', main)
+    main()
 })
 
 function main() {
 
     window.addEventListener('keyup', handleKeyUp)
     window.addEventListener('keydown', handleKeyDown)
+    window.addEventListener('keypress', handleKeyPress)
+
+    let canvas = document.querySelector('#app')
+    let doc = new Document('test')
+    let editor = new CanvasTextEditor(doc, { canvas, backgroundColor: '#000', textColor: '#fff' })
+
+    window.editor = editor
 
     let data = [
         ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', '[', ']'],
@@ -59,16 +70,20 @@ function main() {
 
 function handleKeyUp(event) {
     let key = document.querySelector(`[data-key="${event.key.toUpperCase()}"]`)
-    if (!key) {
-        return
+    if (key) {
+        key.setAttribute('position', 'y', key.baseYPosition)
     }
-    key.setAttribute('position', 'y', key.baseYPosition)
+    window.editor.dispatchEvent('keyup', event)
 }
 
 function handleKeyDown(event) {
     let key = document.querySelector(`[data-key="${event.key.toUpperCase()}"]`)
-    if (!key) {
-        return
+    if (key) {
+        key.setAttribute('position', 'y', key.baseYPosition - 1)
     }
-    key.setAttribute('position', 'y', key.baseYPosition - 1)
+    window.editor.dispatchEvent('keydown', event)
+}
+
+function handleKeyPress(event) {
+    window.editor.dispatchEvent('keypress', event)
 }

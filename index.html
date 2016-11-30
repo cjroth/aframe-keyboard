@@ -7,10 +7,14 @@
     </head>
     <body>
         <a-scene debug stats keyboard-shortcuts="enterVR: false; resetSensor: false">
-            <a-entity id="keyboard" scale="0.01 0.01 0.01" position="0 1.4 -0.3"></a-entity>
+            <a-assets>
+                <canvas id="app" width="1024" height="512"></canvas>
+            </a-assets>
+            <a-video src="#app" width="1" height="0.5" position="0 1.5 -0.75" transparent="false"></a-video>
+            <a-entity id="keyboard" scale="0.01 0.01 0.01" position="-0.15 1.4 -0.44"></a-entity>
             <a-plane rotation="270 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
             <a-sky color="#ececec"></a-sky>
-            <a-entity position="0.15 1.6 -0.2" rotation="-45 0 0">
+            <a-entity position="0 1.6 -0.2" rotation="-15 0 0">
                 <a-camera position="0 0 0" user-height="0" wasd-controls="enabled: false"></a-camera>
             </a-entity>
         </a-scene>

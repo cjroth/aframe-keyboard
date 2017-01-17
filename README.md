@@ -2,7 +2,7 @@
 
 ![Screenshot](/screenshot.png "A virtual reality keyboard and text editor in Aframe... cause why not?")
 
-This is a demo of a VR keyboard and text editor built with [Aframe](https://aframi.io). My inspiration was in wanting a way to type and get visual feedback in 3D. While re-creating our 2D interfaces in VR worlds is probably an anti-pattern, I prefer typing over oral dictation, so I wanted a way to visualize typing in three dimensions.
+This is a demo of a VR keyboard and text editor built with [Aframe](https://aframe.io). My inspiration was in wanting a way to type and get visual feedback in 3D. While re-creating our 2D interfaces in VR worlds is probably an anti-pattern, I prefer typing over oral dictation, so I wanted a way to visualize typing in three dimensions.
 
 
 I used [D3]() to set up the keyboard layout and Dmitriy Kubyshkin's [canvas-text-editor](https://github.com/grassator/canvas-text-editor) project for the text editor.
